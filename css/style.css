@@ -1,0 +1,21 @@
+#mapid { height: 500px; width: 60%;}
+
+#signature{
+    border : 1px solid black;
+}
+
+
+
+
+
+
+  
+.slideshow > img {
+    display: block;
+    margin: auto;
+    border: solid 5px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    height: 85%;
+}
+
+

@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/css/bootstrap.css" />
+    <title>Velos</title>
+</head>
+
+<body>
+    <div class="">
+        
+        
+        
+        
+	<section id="diaporama_container">
+		<h2 class="title_body">Infos</h2>
+		<div id="slideshow" class="slideshow">
+				<figure>
+					<img class="slide_img" src="images/velov.jpg" alt="image slider" />
+					<figcaption id="slide_caption_01" class="slide_caption">
+                        Bienvenue dans l'application de réservation de vélo'v lyon
+					</figcaption>
+				</figure>
+        
+
+        <div class="button">
+        <a href="#" class="prevBtn"><i class="fas fa-chevron-circle-left"></i></a>
+        <a href="#" class="pauseBtn"><i class="far fa-stop-circle"></i>
+</a>
+        <a href="#" class="nextBtn"><i class="fas fa-chevron-circle-right"></i></a>
+    </div>
+            </div>
+		
+	</section>
+        
+        
+        
+        
+        <div class="row">
+            <div class="col-md-12" id="mapid">
+
+            </div>
+            <div class="d-none" id="infoStation">
+                <h2>Infos Station :</h2>
+                <p>
+                    Nom : <span id="nomStation"></span>
+                </p>
+                <p>
+                    Adresse : <span id="adresseStation"></span>
+                </p>
+                <p>
+                    Velo'v libre : <span id="nbrVelosDispo"></span>
+                </p>
+                <p>
+                    Places libre : <span id="nbrPlacesDispo"></span>
+                </p>
+
+                <form class="d-none" id="formReservation">
+
+                    <h2>Réservation</h2>
+
+                    <p>
+
+                        <label for="nomFamille">Nom</label> :
+
+                        <input type="text" name="nomFamille" id="nomFamille" required>
+
+                    </p>
+                    <p>
+
+                        <label for="prenom">Prénom</label> :
+
+                        <input type="text" name="prenom" id="prenom" required>
+
+                    </p>
+                    <canvas id="signature" name="signature"></canvas>
+
+                    <input type="submit" value="Envoyer">
+
+                    <input type="reset" value="Annuler">
+
+                </form>
+            </div>
+        </div>
+        <div class="row d-none" id="recapReservation">
+            <p>Votre réservation est validée.</p>
+        </div>
+    </div>
+
+    <script src="js/ajax.js"></script>
+    <script src="js/functions.js"></script>
+    <script src="js/App.js"></script>
+    <script src="js/Slide.js"></script>
+    <script src="js/Slider.js"></script>
+    <script src="js/Formulaire.js"></script>
+    <script src="js/Station.js"></script>
+    <script src="js/Client.js"></script>
+    <script src="js/Reservation.js"></script>
+    <script src="js/Map.js"></script>
+    <script src="js/Canvas.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
+    <script>
+        let app = new App();
+    </script>
+
+</body>
+
+</html>
