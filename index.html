@@ -11,16 +11,16 @@
 </head>
 
 <body>
-    <div class="">
+    <div class="container-fluid">
         
         
         
         
-	<section id="diaporama_container">
-		<h2 class="title_body">Infos</h2>
-		<div id="slideshow" class="slideshow">
+	<section class="row" id="diaporama_container">
+		<h2 class="col-sm-12 title_body">Infos</h2>
+		<div id="slideshow" class="slideshow col-sm-12 mx-auto">
 				<figure>
-					<img class="slide_img" src="images/velov.jpg" alt="image slider" />
+					<img class="img-fluid" src="images/velov.jpg" alt="image slider" />
 					<figcaption id="slide_caption_01" class="slide_caption">
                         Bienvenue dans l'application de réservation de vélo'v lyon
 					</figcaption>
@@ -102,6 +102,7 @@
     <script src="js/Reservation.js"></script>
     <script src="js/Map.js"></script>
     <script src="js/Canvas.js"></script>
+    <script src="js/Timer.js"></script>
     <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
     <script>
         let app = new App();

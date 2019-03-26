@@ -8,7 +8,7 @@ class App {
         this.initStations(this.map,this.formulaire); //Chargement des stations
         this.initReservation(this.formulaire);
         this.initCanvas(); //mise en place du canvas
-       
+        
     }
 
     initCanvas() {
@@ -54,6 +54,11 @@ class App {
         const reservation = new Reservation(client,date);
         reservation.enregistrerReservation(client);
         reservation.afficherReservation(formulaire.station);
+        var now = Date.now();
+        var timer= new Timer(now, 0.5);
+        var x = setInterval(function(){timer.distanceMoinsUn()},1000);
+            
+       
         });
        
     }
