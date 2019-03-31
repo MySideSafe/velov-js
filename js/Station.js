@@ -37,5 +37,9 @@ class Station{
      this.nbrVelosDispo=this.nbrVelosDispo-1;
      document.getElementById("nbrVelosDispo").textContent=this.nbrVelosDispo;
  }
+    remettreUnVelo(){
+        this.nbrVelosDispo=this.nbrVelosDispo+1;
+     document.getElementById("nbrVelosDispo").textContent=this.nbrVelosDispo;
+    }
     
 }

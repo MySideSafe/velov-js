@@ -27,6 +27,6 @@ class Reservation {
     }
 
     annulerReservation() {
-
+        station.remettreUnVelo();
     }
 }

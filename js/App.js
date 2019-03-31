@@ -56,7 +56,9 @@ class App {
         reservation.afficherReservation(formulaire.station);
         var now = Date.now();
         var timer= new Timer(now, 0.5);
-        var x = setInterval(function(){timer.distanceMoinsUn()},1000);
+        timer.storeTimer();
+        timer.decompter();
+        //var x = setInterval(function(){timer.distanceMoinsUn()},1000);
             
        
         });
@@ -74,7 +76,7 @@ class App {
         let slide4 = new Slide("images/lyon_3.jpg","Votre Vélo'v est réservé pendant 20 minutes Après ce délais votre réservation sera automatique annulée","ville de lyon");
         slides.push(slide4);
         var slider = new Slider("slideshow",slides);
-        console.log(slides);
+
         slider.listeners();
     }
 }
