@@ -6,14 +6,11 @@ class Timer {
         this.dateDeFin = this.now + (this.duree * 60 * 1000);
         this.distance = this.dateDeFin - now;
         this.interval;
+        
     }
     
     storeTimer(){
-    sessionStorage.duree = this.duree;
-    sessionStorage.now = this.now;
-    sessionStorage.dateDefin = this.dateDeFin;
-    sessionStorage.distance = this.distance;
-    sessionStorage.interval = this.interval;
+    sessionStorage.timer=JSON.stringify(this);
     }
 
     distanceMoinsUn() {
@@ -37,6 +34,9 @@ class Timer {
             document.getElementById("recapReservation").textContent = "Vous avez réservé un vélo pour " + minutes + " minutes et " + seconds + " seconde(s)";
         } else {
             document.getElementById("recapReservation").textContent = "Votre réservation a expirée";
+            sessionStorage.clear();
+            document.getElementById("infoStation").classList.replace('col-md-4', 'd-none');
+            document.getElementById("mapid").classList.replace('col-md-8', 'col-md-12');
         }
     }
 

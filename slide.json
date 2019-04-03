@@ -1,0 +1,17 @@
+[{
+    "image": "images/velov.jpg",
+    "figcaption": "Bienvenue dans l'application de réservation de vélo'v lyon",
+    "altImage": "location velov"
+}, {
+    "image": "images/lyon_1.jpg",
+    "figcaption": "Choissisez votre station",
+    "altImage": "ville de lyon"
+}, {
+    "image": "images/lyon_2.jpg",
+    "figcaption": "Réserver --> signer --> valider Chaque nouvelle réservation annule la précédente",
+    "altImage": "ville de lyon"
+}, {
+    "image": "images/lyon_3.jpg",
+    "figcaption": "Votre Vélo'v est réservé pendant 20 minutes Après ce délais votre réservation sera automatique annulée",
+    "altImage": "ville de lyon"
+}]

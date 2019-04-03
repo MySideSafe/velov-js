@@ -6,9 +6,22 @@ class App {
         this.initSlider();
         this.formulaire = new Formulaire(document.getElementById("formReservation"));
         this.initStations(this.map,this.formulaire); //Chargement des stations
+        //Si exite timer nop initReseration
+      
+        if(sessionStorage.getItem("timer") != null)
+            {
+                var timerJson=sessionStorage.getItem("timer");
+                var timerRecuper= timerJson && JSON.parse(timerJson);
+                var timer = new Timer(timerRecuper.now,timerRecuper.duree);
+                timer.dateDefin=timerRecuper.dateDefin;
+                timer.distance=timerRecuper.distance;
+                timer.interval=timerRecuper.interval;
+                timer.decompter();
+                document.getElementById("recapReservation").classList.replace("d-none", "d-block");
+            }else{
         this.initReservation(this.formulaire);
+            }
         this.initCanvas(); //mise en place du canvas
-        
     }
 
     initCanvas() {
@@ -45,6 +58,7 @@ class App {
     }
     
     initReservation(formulaire){
+       
         formulaire.formDom.addEventListener("submit", function (e) {
         e.preventDefault();
         const client = new Client();
@@ -54,18 +68,19 @@ class App {
         const reservation = new Reservation(client,date);
         reservation.enregistrerReservation(client);
         reservation.afficherReservation(formulaire.station);
+            //verifier si timer existe
         var now = Date.now();
         var timer= new Timer(now, 0.5);
-        timer.storeTimer();
         timer.decompter();
-        //var x = setInterval(function(){timer.distanceMoinsUn()},1000);
-            
-       
-        });
+        }
+        );
        
     }
     
+    //possible de creer un.json pour charger les slides
     initSlider(){
+        
+
         var slides =[];
         let slide1 = new Slide("images/velov.jpg","Bienvenue dans l'application de réservation de vélo'v lyon","location velov");
         slides.push(slide1);
@@ -75,6 +90,7 @@ class App {
         slides.push(slide3);
         let slide4 = new Slide("images/lyon_3.jpg","Votre Vélo'v est réservé pendant 20 minutes Après ce délais votre réservation sera automatique annulée","ville de lyon");
         slides.push(slide4);
+    
         var slider = new Slider("slideshow",slides);
 
         slider.listeners();

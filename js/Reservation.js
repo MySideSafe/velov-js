@@ -21,12 +21,15 @@ class Reservation {
 
     afficherReservation(station) {
         station.enleverUnVelo();
-        // todo retirer un vélo dans l'affichage de infos station
-        //Todo afficher timer de 20 min
         document.getElementById("recapReservation").classList.replace("d-none", "d-block");
     }
+    
 
     annulerReservation() {
         station.remettreUnVelo();
+        sessionStorage.clear();
+        //effacerDateReservation
+        
+        
     }
 }
