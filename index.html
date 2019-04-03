@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin="" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css" />
+   
     <link rel="stylesheet" href="css/css/bootstrap.css" />
+     <link rel="stylesheet" href="css/style.css" />
     <title>Velos</title>
 </head>
 
@@ -15,10 +16,8 @@
         
         
         
-        
 	<section class="row" id="diaporama_container">
-		<h2 class="col-sm-12 title_body">Infos</h2>
-		<div id="slideshow" class="slideshow col-sm-12 mx-auto">
+		<div id="slideshow" class="slideshow col-sm-12 ">
 				<figure>
 					<img class="img-fluid" src="images/velov.jpg" alt="image slider" />
 					<figcaption id="slide_caption_01" class="slide_caption">
@@ -27,20 +26,24 @@
 				</figure>
         
 
-        <div class="button">
-        <a href="#" class="prevBtn"><i class="fas fa-chevron-circle-left"></i></a>
-        <a href="#" class="pauseBtn"><i class="far fa-stop-circle"></i>
-</a>
-        <a href="#" class="nextBtn"><i class="fas fa-chevron-circle-right"></i></a>
+        
+        <button class="display-left"><a href="#" class="prevBtn"><i class="fas fa-angle-left arrow-left"></i></a></button>
+        <button class="pauseBtn display-stop"><i class="far fa-stop-circle stop"></i>
+</button>
+            <button class="display-right">
+        <a href="#" class="nextBtn"><i class="fas fa-angle-right arrow-right"></i></a></button>
     </div>
-            </div>
+            
+            
 		
 	</section>
         
+        <section class="row d-none" id="recapReservation">
+            <p>Votre réservation est validée.</p>
+        </section>
         
         
-        
-        <div class="row">
+        <section class="row">
             <div class="col-md-12" id="mapid">
 
             </div>
@@ -85,10 +88,8 @@
 
                 </form>
             </div>
-        </div>
-        <div class="row d-none" id="recapReservation">
-            <p>Votre réservation est validée.</p>
-        </div>
+        </section>
+        
     </div>
 
     <script src="js/ajax.js"></script>
