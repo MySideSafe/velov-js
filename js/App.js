@@ -80,8 +80,34 @@ class App {
     //possible de creer un.json pour charger les slides
     initSlider(){
         
+        
+        let slides=[];
+        ajaxGet("http://igor-iff-leymarie.ovh/velo/slide.json", function (reponse) {
+            let slidesJ = JSON.parse(reponse);
+            console.log(slidesJ);
+            for (let unSlide of slidesJ) {
+                var slide= new Slide(unSlide.image,unSlide.figcaption,unSlide.altImage);
+               slides.push(slide);
+                console.log(slide);
+                console.log("b");
+                
+            }
 
-        var slides =[];
+            }
+        );
+        console.log(slides);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*var slides =[];
         let slide1 = new Slide("images/velov.jpg","Bienvenue dans l'application de réservation de vélo'v lyon","location velov");
         slides.push(slide1);
         let slide2 = new Slide("images/lyon_1.jpg","Choissisez votre station","ville de lyon");
@@ -90,7 +116,7 @@ class App {
         slides.push(slide3);
         let slide4 = new Slide("images/lyon_3.jpg","Votre Vélo'v est réservé pendant 20 minutes Après ce délais votre réservation sera automatique annulée","ville de lyon");
         slides.push(slide4);
-    
+    */
         var slider = new Slider("slideshow",slides);
 
         slider.listeners();
